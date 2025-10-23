@@ -1,0 +1,17 @@
+{
+  "name": "mini-marketplace-books",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "concurrently \"pnpm run dev:back\" \"pnpm run dev:front\"",
+    "dev:back": "cd backend && ./mvnw spring-boot:run",
+    "dev:front": "cd frontend && pnpm dev",
+    "json-server": "cd frontend && pnpm dev:api"
+  },
+  "author": "SoyKevin111",
+  "license": "ISC",
+  "packageManager": "pnpm@10.18.2",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

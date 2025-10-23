@@ -1,0 +1,74 @@
+# -----------------------------
+# Node / Frontend (Next.js)
+# -----------------------------
+# node_modules
+frontend/node_modules/
+frontend/.pnp
+frontend/.pnp.js
+
+# Logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# Env
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Next.js build output
+frontend/.next/
+frontend/out/
+frontend/build/
+
+# Testing
+frontend/coverage/
+
+# IDE / Editor
+frontend/.vscode/
+frontend/.idea/
+frontend/*.sublime-project
+frontend/*.sublime-workspace
+
+# -----------------------------
+# Java / Backend (Spring Boot)
+# -----------------------------
+# Maven / Gradle
+backend/target/
+backend/build/
+
+# Eclipse / IntelliJ / VSCode
+backend/.idea/
+backend/.project
+backend/.classpath
+backend/.settings/
+backend/.vscode/
+
+# Logs
+backend/logs/
+backend/*.log
+
+# Temp / OS
+backend/*.tmp
+backend/*.swp
+backend/.DS_Store
+backend/*.class
+
+# Env
+backend/.env
+backend/.env.local
+backend/*.keystore
+
+# Spring Boot
+backend/*.jar
+backend/*.war
+
+# -----------------------------
+# Global
+# -----------------------------
+# OS files
+.DS_Store
+Thumbs.db

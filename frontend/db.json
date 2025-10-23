@@ -1,0 +1,264 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "The Mezzanine",
+      "author": "Nicholson Baker",
+      "publishedAt": "1988-01-01",
+      "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.z0Viqg3sBOKJCQf4H70pZwHaLN?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "genre": "horror",
+      "fav": false
+    },
+    {
+      "id": "2",
+      "title": "Ice",
+      "author": "Anna Kavan",
+      "publishedAt": "1967-01-01",
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.sOKhNd-EdAWKR7JvnDKrhgAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=294&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "comedia",
+      "fav": false
+    },
+    {
+      "id": "3",
+      "title": "Engine Summer",
+      "author": "John Crowley",
+      "publishedAt": "1979-01-01",
+      "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.Q_zgIbi_ghoEOoE_ZJnnewAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=298&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "horror",
+      "fav": true
+    },
+    {
+      "id": "4",
+      "title": "The Hearing Trumpet",
+      "author": "Leonora Carrington",
+      "publishedAt": "1976-01-01",
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.DP79FOs7iuydzVnSYPBYIAAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=256&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "acción",
+      "fav": true
+    },
+    {
+      "id": "5",
+      "title": "The Book of Disquiet",
+      "author": "Fernando Pessoa",
+      "publishedAt": "1982-01-01",
+      "imageUrl": "https://tse1.explicit.bing.net/th/id/OIP.mxXMA3U8cxjZ1WvgB9jDTQAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=289&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "drama",
+      "fav": true
+    },
+    {
+      "id": "6",
+      "title": "The Third Policeman",
+      "author": "Flann O'Brien",
+      "publishedAt": "1967-01-01",
+      "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.z0Viqg3sBOKJCQf4H70pZwHaLN?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "genre": "ciencia ficción",
+      "fav": true
+    },
+    {
+      "id": "7",
+      "title": "Memoirs of a Polar Bear",
+      "author": "Yoko Tawada",
+      "publishedAt": "2016-01-01",
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.DP79FOs7iuydzVnSYPBYIAAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=256&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "aventura",
+      "fav": true
+    },
+    {
+      "id": "8",
+      "title": "The Tartar Steppe",
+      "author": "Dino Buzzati",
+      "publishedAt": "1940-01-01",
+      "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.Q_zgIbi_ghoEOoE_ZJnnewAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=298&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "horror",
+      "fav": true
+    },
+    {
+      "id": "9",
+      "title": "The Invention of Morel",
+      "author": "Adolfo Bioy Casares",
+      "publishedAt": "1940-01-01",
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.zhfvJySTr-cX8JlbNbBQkAAAAA?cb=12&pid=ImgDet&ucfimg=1&w=202&h=309&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "ciencia ficción",
+      "fav": true
+    },
+    {
+      "id": "10",
+      "title": "The Ten Thousand Things",
+      "author": "Maria Dermout",
+      "publishedAt": "1955-01-01",
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.sOKhNd-EdAWKR7JvnDKrhgAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=294&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "horror",
+      "fav": true
+    },
+    {
+      "id": "11",
+      "title": "The Unconsoled",
+      "author": "Kazuo Ishiguro",
+      "publishedAt": "1995-09-01",
+      "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.S_qxNuRDKvaOgIe_N3V13AHaLq?cb=12&pid=ImgDet&ucfimg=1&w=199&h=314&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "horror",
+      "fav": true
+    },
+    {
+      "id": "12",
+      "title": "The Obscene Bird of Night",
+      "author": "José Donoso",
+      "publishedAt": "1970-01-01",
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.DP79FOs7iuydzVnSYPBYIAAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=256&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "ciencia ficción",
+      "fav": true
+    },
+    {
+      "id": "13",
+      "title": "The Passion According to G.H.",
+      "author": "Clarice Lispector",
+      "publishedAt": "1964-01-01",
+      "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.Q_zgIbi_ghoEOoE_ZJnnewAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=298&c=7&dpr=1,1&o=7&rm=3",
+      "fav": true
+    },
+    {
+      "id": "14",
+      "title": "Amulet",
+      "author": "Roberto Bolaño",
+      "publishedAt": "1999-01-01",
+      "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.S_qxNuRDKvaOgIe_N3V13AHaLq?cb=12&pid=ImgDet&ucfimg=1&w=199&h=314&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "fantasía",
+      "fav": false
+    },
+    {
+      "id": "15",
+      "title": "The Melancholy of Resistance",
+      "author": "László Krasznahorkai",
+      "publishedAt": "1989-01-01",
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.zhfvJySTr-cX8JlbNbBQkAAAAA?cb=12&pid=ImgDet&ucfimg=1&w=202&h=309&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "ciencia ficción",
+      "fav": true
+    },
+    {
+      "id": "16",
+      "title": "The Tunnel",
+      "author": "Ernesto Sabato",
+      "publishedAt": "1948-01-01",
+      "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.F844k7Wp6Uh5Wf7vnlx0dAAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=292&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "misterio",
+      "fav": true
+    },
+    {
+      "id": "17",
+      "title": "The Vet's Daughter",
+      "author": "Barbara Comyns",
+      "publishedAt": "1959-01-01",
+      "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.ssjZIH3Rdbu_r3tnT18aqAAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=289&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "horror",
+      "fav": false
+    },
+    {
+      "id": "18",
+      "title": "The Other Side",
+      "author": "Alfred Kubin",
+      "publishedAt": "1908-01-01",
+      "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.ZYm4NKnKceXleVHj7RmM7wHaKj?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "genre": "horror",
+      "fav": false
+    },
+    {
+      "id": "19",
+      "title": "The Lime Works",
+      "author": "Thomas Bernhard",
+      "publishedAt": "1970-01-01",
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.DfMGwPW22S72cJdfy9K9OQAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=303&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "misterio",
+      "fav": false
+    },
+    {
+      "id": "20",
+      "title": "The Skin",
+      "author": "Curzio Malaparte",
+      "publishedAt": "1949-01-01",
+      "imageUrl": "https://pm1.narvii.com/6641/3336c37b0d5de0f10634484edc32029240bfc435_hq.jpg",
+      "genre": "horror",
+      "fav": false
+    },
+    {
+      "id": "21",
+      "title": "The Mezzanine",
+      "author": "Nicholson Baker",
+      "publishedAt": "1988-01-01",
+      "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.z0Viqg3sBOKJCQf4H70pZwHaLN?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "genre": "acción",
+      "fav": false
+    },
+    {
+      "id": "22",
+      "title": "Ice",
+      "author": "Anna Kavan",
+      "publishedAt": "1967-01-01",
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.sOKhNd-EdAWKR7JvnDKrhgAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=294&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "misterio",
+      "fav": false
+    },
+    {
+      "id": "23",
+      "title": "Engine Summer",
+      "author": "John Crowley",
+      "publishedAt": "1979-01-01",
+      "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.Q_zgIbi_ghoEOoE_ZJnnewAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=298&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "fantasía",
+      "fav": false
+    },
+    {
+      "id": "24",
+      "title": "The Hearing Trumpet",
+      "author": "Leonora Carrington",
+      "publishedAt": "1976-01-01",
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.DP79FOs7iuydzVnSYPBYIAAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=256&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "acción",
+      "fav": true
+    },
+    {
+      "id": "25",
+      "title": "The Passion According to G.H.",
+      "author": "Clarice Lispector",
+      "publishedAt": "1964-01-01",
+      "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.Q_zgIbi_ghoEOoE_ZJnnewAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=298&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "acción",
+      "fav": true
+    },
+    {
+      "id": "26",
+      "title": "Amulet",
+      "author": "Roberto Bolaño",
+      "publishedAt": "1999-01-01",
+      "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.S_qxNuRDKvaOgIe_N3V13AHaLq?cb=12&pid=ImgDet&ucfimg=1&w=199&h=314&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "misterio",
+      "fav": true
+    },
+    {
+      "id": "27",
+      "title": "The Melancholy of Resistance",
+      "author": "László Krasznahorkai",
+      "publishedAt": "1989-01-01",
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.zhfvJySTr-cX8JlbNbBQkAAAAA?cb=12&pid=ImgDet&ucfimg=1&w=202&h=309&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "misterio",
+      "fav": true
+    },
+    {
+      "id": "28",
+      "title": "The Tunnel",
+      "author": "Ernesto Sabato",
+      "publishedAt": "1948-01-01",
+      "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.F844k7Wp6Uh5Wf7vnlx0dAAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=292&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "fantasía",
+      "fav": true
+    },
+    {
+      "id": "29",
+      "title": "The Vet's Daughter",
+      "author": "Barbara Comyns",
+      "publishedAt": "1959-01-01",
+      "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.ssjZIH3Rdbu_r3tnT18aqAAAAA?cb=12&pid=ImgDet&ucfimg=1&w=206&h=289&c=7&dpr=1,1&o=7&rm=3",
+      "genre": "fantasía",
+      "fav": true
+    }
+  ]
+}

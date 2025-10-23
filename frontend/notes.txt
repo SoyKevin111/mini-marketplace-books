@@ -1,0 +1,9 @@
+create proyect:
+pnpm create next-app mi-proyecto
+
+Libreria Hero icons
+pnpm add @heroicons/react
+pnpm add clsx #para clases
+pnpm add axios
+pnpm add -D json-server
+correr: pnpm run dev:api
