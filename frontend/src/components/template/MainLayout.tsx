@@ -12,7 +12,7 @@ const MainLayout = ({ component }: Props) => {
 				<Sidebar />
 			</aside>
 			<main className='flex-1 h-screen'>
-				<div className='w-full h-full overflow-y-scroll py-4 px-5'>
+				<div className='w-full h-full overflow-y-scroll pt-4 px-5'>
 					{component}
 				</div>
 			</main>

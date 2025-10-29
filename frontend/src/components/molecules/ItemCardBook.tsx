@@ -18,7 +18,7 @@ const ItemCardBook = ({ title, img, id, genre }: Props) => {
 		>
 			<div className="w-full flex justify-center relative">
 				<img
-					className="w-[330] h-[250] object-cover"
+					className="w-[330] h-[240] object-cover"
 					src={img}
 					alt={title}
 					loading="lazy"
