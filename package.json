@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "concurrently \"pnpm run dev:service\" \"pnpm run dev:web\"",
-    "dev:service": "cd service && ./mvnw spring-boot:run",
+    "dev:service": "cd service && .\\mvnw.cmd spring-boot:run",
     "dev:web": "cd web && pnpm dev",
     "dev:api": "cd web && pnpm dev:api"
   },
