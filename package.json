@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "concurrently \"pnpm run dev:back\" \"pnpm run dev:front\"",
-    "dev:back": "cd backend && ./mvnw spring-boot:run",
-    "dev:front": "cd frontend && pnpm dev",
-    "json-server": "cd frontend && pnpm dev:api"
+    "dev": "concurrently \"pnpm run dev:service\" \"pnpm run dev:web\"",
+    "dev:service": "cd service && ./mvnw spring-boot:run",
+    "dev:web": "cd web && pnpm dev",
+    "dev:api": "cd web && pnpm dev:api"
   },
   "author": "SoyKevin111",
   "license": "ISC",
