@@ -1,11 +1,13 @@
 package com.example.service.controller;
 
+import com.example.service.dto.BookResponse;
 import com.example.service.entity.Book;
 import com.example.service.service.BookService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/books")
 @RestController
 public class BookController {
@@ -22,11 +24,20 @@ public class BookController {
    }
 
    @GetMapping
-   public Page<Book> findAll(
+   public Page<BookResponse> findAll(
       @RequestParam(defaultValue = "1") int page,
-      @RequestParam( defaultValue = "10") int size
+      @RequestParam(defaultValue = "12") int size
    ) {
-      return this.bookService.findAllByPage( PageRequest.of(page, size));
+      return this.bookService.findAllByPage(PageRequest.of(page - 1, size))
+         .map(book ->
+            new BookResponse(
+               book.getId(),
+               book.getTitle(),
+               book.getAuthor(),
+               book.getGenre(),
+               book.getPublishedAt(),
+               book.getImageUrl(),
+               book.isFav()));
    }
 
    @GetMapping("/{id}")
