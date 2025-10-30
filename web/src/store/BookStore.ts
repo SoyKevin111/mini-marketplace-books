@@ -35,9 +35,9 @@ export const useBookStore = create<BookState>((set, get) => ({
 		try {
 			const response = await bookService.fetch(page, get().pageSize);
 			set((state) => ({
-				cache: { ...state.cache, [page]: response.data },
-				books: response.data,
-				total: response.total,
+				cache: { ...state.cache, [page]: response.content },
+				books: response.content,
+				total: response.totalPages,
 				page: response.page,
 			}));
 		} catch (error: any) {

@@ -8,9 +8,8 @@ interface Props {
 	setPage: Function;
 }
 
-const Pagination = ({ total, page, pageSize }: Props) => {
+const Pagination = ({ total, page }: Props) => {
 	const router = useRouter();
-	const totalPages = Math.ceil(total / pageSize);
 
 	const goToPage = (newPage: number) => {
 		router.push({
@@ -21,7 +20,7 @@ const Pagination = ({ total, page, pageSize }: Props) => {
 
 	return (
 		<div className="flex gap-2 justify-center my-4">
-			{Array.from({ length: totalPages }, (_, i) => (
+			{Array.from({ length: total }, (_, i = 1) => (
 				<button
 					key={i}
 					onClick={() => goToPage(i + 1)}

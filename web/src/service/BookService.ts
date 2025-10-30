@@ -1,20 +1,25 @@
-import { Book, PaginatedBook } from "@/types/book";
+import { Book, Pageable } from "@/types/book";
 import axios from "axios";
 
-const API_URL = "http://localhost:3005/books";
+const API_URL = "http://localhost:8080/books";
 
 export const bookService = {
-	async fetch(page: number, pageSize: number): Promise<PaginatedBook> {
-		const start = (page - 1) * pageSize;
-		const end = start + pageSize;
-		const res = await axios.get<Book[]>(`${API_URL}?_start=${start}&_end=${end}`);
-		console.log('fetch')
-		return {
-			data: res.data,
-			total: 29,
-			page,
-			pageSize,
+	async fetch(page: number, pageSize: number): Promise<Pageable<Book>> {
+		console.log(`page: ${page}   -   size: ${pageSize}`)
+		const res = await axios.get<any>(`${API_URL}?size=${pageSize}&page=${page}`);
+		const pageable = {
+			content: res.data.content.map((b: any) => ({
+				...b,
+				id: String(b.id),
+			})),
+			totalElements: res.data.totalElements,
+			totalPages: res.data.totalPages,
+			page: res.data.pageable.pageNumber,
 		};
+		console.log('fetch');
+		console.log(res.data)
+		console.log(pageable)
+		return pageable;
 	},
 
 	async create(book: Book): Promise<Book> {

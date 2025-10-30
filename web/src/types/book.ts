@@ -8,9 +8,9 @@ export interface Book {
 	fav: boolean
 }
 
-export interface PaginatedBook {
-	data: Book[],
-	total: number,
-	page: number,
-	pageSize: number
+export interface Pageable<T> {
+	content: T[],
+	totalElements: number,
+	totalPages: number,
+	page: number
 }
