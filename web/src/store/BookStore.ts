@@ -38,7 +38,7 @@ export const useBookStore = create<BookState>((set, get) => ({
 				cache: { ...state.cache, [page]: response.content },
 				books: response.content,
 				total: response.totalPages,
-				page: response.page,
+				page,
 			}));
 		} catch (error: any) {
 			console.error("fetchBooks error:", error);
