@@ -37,6 +37,12 @@ export const bookService = {
 		const res = await axios.get<Book>(`${API_URL}/${id}`);
 		console.log('fetch by id')
 		return res.data;
+	},
+	async findAllGenres(): Promise<any> {
+		return axios.get<any>(API_URL + '/genres').then(res => {
+			console.log(res.data)
+			return res.data
+		});
 	}
 
 };

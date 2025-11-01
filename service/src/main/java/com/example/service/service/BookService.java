@@ -41,7 +41,14 @@ public class BookService {
 
    public Book update(Long id, Book book) {
       try {
-         return this.bookRepository.save(book);
+         Book bookToUpdate = this.bookRepository.findById(id).orElseThrow(() -> new RuntimeException("Libro no encontrado"));
+         bookToUpdate.setTitle(book.getTitle());
+         bookToUpdate.setAuthor(book.getAuthor());
+         bookToUpdate.setGenre(book.getGenre());
+         bookToUpdate.setPublishedAt(book.getPublishedAt());
+         bookToUpdate.setImageUrl(book.getImageUrl());
+         bookToUpdate.setFav(book.isFav());
+         return this.bookRepository.save(bookToUpdate);
       } catch (Exception e) {
          throw new RuntimeException("Error al actualizar el libro", e);
       }

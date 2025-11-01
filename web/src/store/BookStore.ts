@@ -5,6 +5,7 @@ import { bookService } from "../service/BookService";
 interface BookState {
 	books: Book[];
 	cache: Record<number, Book[]>;
+	genres: string[],
 	bookSelected: Book | null;
 	total: number;
 	page: number;
@@ -12,6 +13,7 @@ interface BookState {
 	loading: boolean;
 	errorMessage: string | null;
 	fetchBooks: (page: number) => Promise<void>;
+	fetchGenres: () => Promise<void>;
 	createBook: (book: Book) => Promise<void>;
 	updateBook: (id: string, book: Book) => Promise<void>;
 	deleteBook: (id: string) => Promise<void>;
@@ -29,6 +31,7 @@ export const useBookStore = create<BookState>((set, get) => ({
 	pageSize: 12,
 	loading: false,
 	errorMessage: null,
+	genres: [],
 
 	fetchBooks: async (page) => {
 		set({ loading: true, errorMessage: null });
@@ -111,5 +114,17 @@ export const useBookStore = create<BookState>((set, get) => ({
 		set({
 			bookSelected: book
 		})
+	},
+	fetchGenres: async () => {
+		set({ loading: true, errorMessage: null });
+		try {
+			const genres = await bookService.findAllGenres();
+			set({ genres })
+		} catch (error: any) {
+			console.error("findGenres error:", error);
+			set({ errorMessage: error.message || "Error al cargar los generos." });
+		} finally {
+			set({ loading: false });
+		}
 	}
 }));
