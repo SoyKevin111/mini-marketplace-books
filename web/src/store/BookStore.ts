@@ -37,6 +37,7 @@ interface BookState {
 	setFilter: (filter: Filter) => void;
 	filterBooks: (page: number, genre: string, author: string) => Promise<void>;
 	setPageFilter: (page: number) => void;
+	clearFilter: () => void;
 }
 
 export const useBookStore = create<BookState>()(
@@ -45,13 +46,13 @@ export const useBookStore = create<BookState>()(
 			books: [],
 			cache: {},
 			page: 0,
-			pageSize: 5,
+			pageSize: 12,
 			totalPages: 0,
 
 			booksFilter: [],
 			cacheFilter: {},
 			filterPage: 0,
-			filterPageSize: 2,
+			filterPageSize: 12,
 			filterTotalPages: 0,
 
 			genres: [],
@@ -217,6 +218,7 @@ export const useBookStore = create<BookState>()(
 					books: cachedBooks || [],
 				});
 			},
+			clearFilter: () => set({ filter: { author: "", genre: "" }, booksFilter: [], filterPage: 0 }),
 		}),
 
 		{

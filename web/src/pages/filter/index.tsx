@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 const Page = () => {
 
-	const { fetchGenres, genres, fetchAuthors, authors, setPageFilter, filterPage, filterPageSize, filterTotalPages, cacheFilter, filterBooks, filter, booksFilter, loading, errorMessage } = useBookStore();
+	const { fetchGenres, genres, fetchAuthors, authors, setPageFilter, filterPage, filterPageSize, filterTotalPages, cacheFilter, filterBooks, filter, booksFilter, loading, errorMessage, setFilter, clearFilter } = useBookStore();
 	const router = useRouter();
 	const queryPage = router.query.page ? parseInt(router.query.page as string) : null;
 
@@ -16,8 +16,8 @@ const Page = () => {
 	useEffect(() => {
 		fetchGenres();
 		fetchAuthors();
-
 	}, [])
+
 
 	useEffect(() => {
 		if (!router.isReady) return;
@@ -32,7 +32,7 @@ const Page = () => {
 	}, [queryPage, router.isReady])
 
 	const fetchBooksFilter = async () => {
-		await filterBooks(queryPage ?? 0, filter.genre, filter.author);
+		filterBooks(queryPage ?? 0, filter.genre, filter.author);
 	};
 
 
@@ -46,7 +46,11 @@ const Page = () => {
 				</div>
 				<div className='flex justify-end items-center gap-4'>
 					<div
-						onClick={() => localStorage.clear()}
+						onClick={() => {
+							localStorage.clear();
+							clearFilter();
+							router.replace('/filter', undefined, { shallow: true });
+						}}
 						className='bg-gray-200 px-10 py-1 cursor-pointer'>
 						Limpiar
 					</div>
@@ -63,9 +67,17 @@ const Page = () => {
 					<p className="p-5 text-red-500">{errorMessage}</p>
 				)}
 				{!loading && !errorMessage && <ListCardBook books={booksFilter} />}
-				<div>
-					<Pagination page={filterPage} setPage={setPageFilter} pageSize={filterPageSize} total={filterTotalPages} pathname='/filter' />
-				</div>
+				{booksFilter.length > 0 && (
+					<div>
+						<Pagination
+							page={filterPage}
+							setPage={setPageFilter}
+							pageSize={filterPageSize}
+							total={filterTotalPages}
+							pathname='/filter'
+						/>
+					</div>
+				)}
 			</div>
 		</div>
 	)

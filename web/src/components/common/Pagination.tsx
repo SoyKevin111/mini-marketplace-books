@@ -10,18 +10,10 @@ interface Props {
 	pathname?: string;
 }
 
-const Pagination = ({ total, page, setPage, setPageFilter, pathname }: Props) => {
+const Pagination = ({ total, page, pathname }: Props) => {
 	const router = useRouter();
 
 	const goToPage = (newPage: number) => {
-		/* 		if (setPageFilter) {
-					setPageFilter(newPage);
-					console.log('set filter: ' + newPage);
-				} else if (setPage) {
-					setPage(newPage);
-					console.log('set page: ' + newPage);
-				} */
-		console.log('nextPage: ' + newPage);
 		if (pathname) {
 			router.push(
 				{
@@ -37,7 +29,6 @@ const Pagination = ({ total, page, setPage, setPageFilter, pathname }: Props) =>
 	return (
 		<div className="flex gap-2 justify-center my-4">
 			{Array.from({ length: total }, (_, i) => {
-				if (page === i) console.log(`pagination: ${page} - ${i}`);
 				return (
 					<button
 						key={i}

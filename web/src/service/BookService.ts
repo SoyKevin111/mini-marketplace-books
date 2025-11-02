@@ -6,7 +6,6 @@ const API_URL = "http://localhost:8080/books";
 export const bookService = {
 	async fetch(page: number, pageSize: number): Promise<Pageable<Book>> {
 		const res = await axios.get<any>(`${API_URL}?size=${pageSize}&page=${page}`);
-		console.log(res.data)
 		const pageable = {
 			content: res.data.content.map((b: any) => ({
 				...b,
@@ -36,19 +35,16 @@ export const bookService = {
 	},
 	async findAllGenres(): Promise<any> {
 		return axios.get<any>(API_URL + '/genres').then(res => {
-			console.log(res.data)
 			return res.data
 		});
 	},
 	async findAllAuthors(): Promise<any> {
 		return axios.get<any>(API_URL + '/authors').then(res => {
-			console.log(res.data)
 			return res.data
 		});
 	},
 	async findFilterBooks(genre: string, author: string, page: number, size: number): Promise<Pageable<Book>> {
 		console.log('fetch filter	')
-		console.log(author + " " + genre)
 		return axios.get<any>(`${API_URL}/filter`, {
 			params: { genre, author, page, size }
 		}).then(res => {
