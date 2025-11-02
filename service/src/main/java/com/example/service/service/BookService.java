@@ -1,10 +1,14 @@
 package com.example.service.service;
 
 import com.example.service.entity.Book;
+import com.example.service.entity.Genre;
 import com.example.service.repository.BookRepository;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class BookService {
@@ -60,6 +64,31 @@ public class BookService {
       } catch (Exception e) {
          throw new RuntimeException("Error al eliminar el libro", e);
       }
+   }
+
+   public List<String> findAllAuthors() {
+      try {
+         return this.bookRepository.findAllAuthors();
+      } catch (Exception e) {
+         throw new RuntimeException("Error al buscar los autores", e);
+      }
+   }
+
+   public Page<Book> findFilterBooks(String genre, String author, int page, int size) {
+      PageRequest pageable = PageRequest.of(page, size);
+      Page<Book> result;
+
+      if (genre != null && author != null && !author.isBlank() && !genre.isBlank()) {
+         result = this.bookRepository.findByGenreAndAuthorIgnoreCase(Genre.fromDisplayName(genre), author, pageable);
+      } else if (genre != null && !genre.isBlank()) {
+         result = this.bookRepository.findByGenre(Genre.fromDisplayName(genre), pageable);
+      } else if (author != null && !author.isBlank()) {
+         result = this.bookRepository.findByAuthorIgnoreCase(author, pageable);
+      } else {
+         throw new RuntimeException("No se proporciono ningun filtro");
+      }
+      return result;
+
    }
 
 }

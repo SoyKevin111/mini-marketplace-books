@@ -1,14 +1,14 @@
 package com.example.service.entity;
 
 public enum Genre {
-   HORROR("horror"),
-   ACCION("acción"),
-   COMEDIA("comedia"),
-   FANTASIA("fantasía"),
-   DRAMA("drama"),
-   CIENCIA_FICCION("ciencia ficción"),
-   AVENTURA("aventura"),
-   MISTERIO("misterio");
+   HORROR("Horror"),
+   ACCION("Acción"),
+   COMEDIA("Comedia"),
+   FANTASIA("Fantasía"),
+   DRAMA("Drama"),
+   CIENCIA_FICCION("Ciencia ficción"),
+   AVENTURA("Aventura"),
+   MISTERIO("Misterio");
 
    private final String displayName;
 
