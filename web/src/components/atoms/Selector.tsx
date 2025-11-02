@@ -1,23 +1,20 @@
 import { useBookStore } from "@/store/BookStore";
-import { Filter } from "@/types/filter";
 import { useState } from "react";
 
 interface Props {
 	options?: string[],
-	label?: string
+	label?: string,
+	optionLoaded: string
 }
 
-const GenreSelector = ({ options = ['DRAMA', 'ACCION', 'FANTASIA', 'HORROR'], label = "Género" }: Props) => {
+const GenreSelector = ({ options = ['DRAMA', 'ACCION', 'FANTASIA', 'HORROR'], label = "Género", optionLoaded }: Props) => {
 
 	const { setFilter, filter } = useBookStore();
-	const [optionSelected, setOptionSelected] = useState("");
+	const [optionSelected, setOptionSelected] = useState(optionLoaded);
 	const [showOptions, setShowOptions] = useState(false);
-	const [filterSelect, setFilterSelect] = useState<Filter>({ author: '', genre: '' });
 
 	const saveFilter = (op: string) => {
 		setOptionSelected(op);
-
-		// Mezclar con el filtro actual del store (no lo sobrescribas)
 		let newFilter = { ...filter };
 
 		if (label === "Género") newFilter = { ...newFilter, genre: op };

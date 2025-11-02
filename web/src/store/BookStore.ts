@@ -174,6 +174,10 @@ export const useBookStore = create<BookState>()(
 						page,
 						get().filterPageSize
 					);
+					if (!response.content.length) {
+						set({ loading: false, errorMessage: "No se encontraron resultados con los filtros proporcionados." });
+						return;
+					}
 					set((state) => ({
 						cacheFilter: { ...state.cacheFilter, [page]: response.content },
 						booksFilter: response.content,

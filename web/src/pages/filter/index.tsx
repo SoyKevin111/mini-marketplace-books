@@ -2,6 +2,7 @@ import Selector from '@/components/atoms/Selector'
 import Pagination from '@/components/common/Pagination';
 import ListCardBook from '@/components/organisms/ListCardBook';
 import { useBookStore } from '@/store/BookStore'
+import { getFilterValue } from '@/utils/filterValuesLoad';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react'
 
@@ -30,11 +31,7 @@ const Page = () => {
 	}, [queryPage, router.isReady])
 
 	const fetchBooksFilter = async () => {
-		try {
-			await filterBooks(queryPage ?? 0, filter.genre, filter.author);
-		} catch (error) {
-			console.error("Error atrapado en el componente:", error);
-		}
+		await filterBooks(queryPage ?? 0, filter.genre, filter.author);
 	};
 
 
@@ -43,13 +40,20 @@ const Page = () => {
 		<div className='flex flex-col h-full gap-2'>
 			<div className='flex justify-between'>
 				<div className='flex gap-3'>
-					<Selector label='Género' options={genres}></Selector>
-					<Selector label='Autor' options={authors}></Selector>
+					<Selector label='Género' options={genres} optionLoaded={getFilterValue("genre")} ></Selector>
+					<Selector label='Autor' options={authors} optionLoaded={getFilterValue("author")} ></Selector>
 				</div>
-				<div className='flex justify-center items-center'>
-					<p
+				<div className='flex justify-end items-center gap-4'>
+					<div
+						onClick={() => localStorage.clear()}
+						className='bg-gray-200 px-10 py-1 cursor-pointer'>
+						Limpiar
+					</div>
+					<div
 						onClick={() => fetchBooksFilter()}
-						className='bg-pink-600 text-gray-900 font-bold px-10 py-1 cursor-pointer'>Filtrar</p>
+						className='bg-pink-600 text-gray-900 font-bold px-10 py-1 cursor-pointer'>
+						Filtrar
+					</div>
 				</div>
 			</div>
 			<div className="flex flex-col flex-grow justify-between">
