@@ -1,17 +1,29 @@
 import { useBookStore } from "@/store/BookStore";
-import { useState } from "react";
+import { getFilterStorage } from "@/utils/filterValuesLoad";
+import { useEffect, useState } from "react";
 
 interface Props {
 	options?: string[],
 	label?: string,
-	optionLoaded: string
 }
 
-const GenreSelector = ({ options = ['DRAMA', 'ACCION', 'FANTASIA', 'HORROR'], label = "Género", optionLoaded }: Props) => {
+const GenreSelector = ({ options = ['DRAMA', 'ACCION', 'FANTASIA', 'HORROR'], label = "Género" }: Props) => {
 
 	const { setFilter, filter } = useBookStore();
-	const [optionSelected, setOptionSelected] = useState(optionLoaded);
+	const [optionSelected, setOptionSelected] = useState("");
 	const [showOptions, setShowOptions] = useState(false);
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+		const storedFilter = getFilterStorage();
+		setFilter(storedFilter);
+		if (label === "Género") setOptionSelected(storedFilter.genre);
+		if (label === "Autor") setOptionSelected(storedFilter.author);
+	}, []);
+
+	if (!mounted) return null;
+
 
 	const saveFilter = (op: string) => {
 		setOptionSelected(op);

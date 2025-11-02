@@ -1,10 +1,9 @@
-import Selector from '@/components/atoms/Selector'
+import Selector from '@/components/atoms/Selector';
 import Pagination from '@/components/common/Pagination';
 import ListCardBook from '@/components/organisms/ListCardBook';
-import { useBookStore } from '@/store/BookStore'
-import { getFilterValue } from '@/utils/filterValuesLoad';
+import { useBookStore } from '@/store/BookStore';
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react'
+import { useEffect } from 'react';
 
 const Page = () => {
 
@@ -13,9 +12,11 @@ const Page = () => {
 	const queryPage = router.query.page ? parseInt(router.query.page as string) : null;
 
 
+
 	useEffect(() => {
 		fetchGenres();
 		fetchAuthors();
+
 	}, [])
 
 	useEffect(() => {
@@ -40,8 +41,8 @@ const Page = () => {
 		<div className='flex flex-col h-full gap-2'>
 			<div className='flex justify-between'>
 				<div className='flex gap-3'>
-					<Selector label='Género' options={genres} optionLoaded={getFilterValue("genre")} ></Selector>
-					<Selector label='Autor' options={authors} optionLoaded={getFilterValue("author")} ></Selector>
+					<Selector label='Género' options={genres} ></Selector>
+					<Selector label='Autor' options={authors}  ></Selector>
 				</div>
 				<div className='flex justify-end items-center gap-4'>
 					<div
