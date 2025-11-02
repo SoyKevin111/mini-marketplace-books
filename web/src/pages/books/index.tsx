@@ -5,15 +5,19 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
 const Page = () => {
-	const { books, fetchBooks, loading, errorMessage, setPage, page, pageSize, total, cache } = useBookStore();
 	const router = useRouter();
-	const queryPage = parseInt(router.query.page as string) || 1;
+	const queryPage = parseInt(router.query.page as string) || 0;
+	const { books, fetchBooks, loading, errorMessage, setPage, page, pageSize, totalPages, cache } = useBookStore();
 
 	useEffect(() => { //inicio del componente y al cambiar de pagina		
-		setPage(queryPage);
-
-		if (!cache[queryPage]) {
-			fetchBooks(queryPage);
+		if (!router.isReady) return;
+		if (queryPage >= 0) {
+			/* 			fetchBooks(0);
+						return; */
+			setPage(queryPage);
+			if (!cache[queryPage]) {
+				fetchBooks(queryPage);
+			}
 		}
 	}, [queryPage]);
 
@@ -25,7 +29,7 @@ const Page = () => {
 			<div className="flex flex-col flex-grow justify-between">
 				<ListCardBook books={books} />
 				<div>
-					<Pagination page={page} setPage={setPage} pageSize={pageSize} total={total} />
+					<Pagination page={page} setPage={setPage} pageSize={pageSize} total={totalPages} pathname='/books' />
 				</div>
 			</div>
 		</div>
