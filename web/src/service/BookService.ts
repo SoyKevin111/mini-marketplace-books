@@ -1,4 +1,5 @@
 import { Book, Pageable } from "@/types/book";
+import { Filter } from "@/types/filter";
 import axios from "axios";
 
 const API_URL = "http://localhost:8080/books";
@@ -43,10 +44,11 @@ export const bookService = {
 			return res.data
 		});
 	},
-	async findFilterBooks(genre: string, author: string, page: number, size: number): Promise<Pageable<Book>> {
-		console.log('fetch filter	')
+	async findFilterBooks(filter: Filter, page: number, size: number): Promise<Pageable<Book>> {
+		console.log('fetch filter =) :', { filter, page, size });
+		const { genre, author, favorites } = filter;
 		return axios.get<any>(`${API_URL}/filter`, {
-			params: { genre, author, page, size }
+			params: { genre, author, favorites, page, size }
 		}).then(res => {
 			console.log(res.data);
 			return res.data;

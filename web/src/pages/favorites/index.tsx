@@ -1,8 +1,11 @@
+import FilterTemplate from '@/components/template/FilterTemplate'
 import React from 'react'
 
 const Page = () => {
 	return (
-		<div>Favorities</div>
+		<>
+			<FilterTemplate filterFavorite={true} pathname='/favorites' />
+		</>
 	)
 }
 

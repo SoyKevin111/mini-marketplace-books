@@ -8,6 +8,7 @@ interface Props {
 	setPage?: (page: number) => void;
 	setPageFilter?: (page: number) => void;
 	pathname?: string;
+	favorites?: boolean;
 }
 
 const Pagination = ({ total, page, pathname }: Props) => {

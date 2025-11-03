@@ -35,7 +35,7 @@ interface BookState {
 	getBookSelected: (id: string) => void;
 	setBookSelected: (book: Book) => void;
 	setFilter: (filter: Filter) => void;
-	filterBooks: (page: number, genre: string, author: string) => Promise<void>;
+	filterBooks: (page: number, filter: Filter) => Promise<void>;
 	setPageFilter: (page: number) => void;
 	clearFilter: () => void;
 }
@@ -46,19 +46,19 @@ export const useBookStore = create<BookState>()(
 			books: [],
 			cache: {},
 			page: 0,
-			pageSize: 12,
+			pageSize: 5,
 			totalPages: 0,
 
 			booksFilter: [],
 			cacheFilter: {},
 			filterPage: 0,
-			filterPageSize: 12,
+			filterPageSize: 5,
 			filterTotalPages: 0,
 
 			genres: [],
 			authors: [],
 			bookSelected: null,
-			filter: { author: "", genre: "" },
+			filter: { author: "", genre: "", favorites: false },
 
 			loading: false,
 			errorMessage: null,
@@ -166,12 +166,11 @@ export const useBookStore = create<BookState>()(
 				}
 			},
 
-			filterBooks: async (page, genre, author) => {
+			filterBooks: async (page, filter) => {
 				set({ loading: true, errorMessage: null });
 				try {
 					const response = await bookService.findFilterBooks(
-						genre,
-						author,
+						filter,
 						page,
 						get().filterPageSize
 					);
@@ -218,7 +217,7 @@ export const useBookStore = create<BookState>()(
 					books: cachedBooks || [],
 				});
 			},
-			clearFilter: () => set({ filter: { author: "", genre: "" }, booksFilter: [], filterPage: 0 }),
+			clearFilter: () => set({ filter: { author: "", genre: "", favorites: false }, booksFilter: [], filterPage: 0 }),
 		}),
 
 		{
