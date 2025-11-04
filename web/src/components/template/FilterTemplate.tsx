@@ -38,6 +38,7 @@ const FilterTemplate = ({ filterFavorite = false, pathname }: FilterTemplateProp
 			setFilter({ genre: '', author: '', favorites: false });
 			console.log('esfav(2): ', filter.favorites)
 		}
+
 		setInitialized(true);
 	}, [router.isReady, queryPage]);
 
@@ -51,7 +52,8 @@ const FilterTemplate = ({ filterFavorite = false, pathname }: FilterTemplateProp
 				filterBooks(queryPage ?? 0, filter);
 			}
 		}
-	}, [queryPage, router.isReady, filter]);
+	}, [queryPage, router.isReady]);
+
 
 	const clearFilters = () => {
 		localStorage.clear();
@@ -67,7 +69,17 @@ const FilterTemplate = ({ filterFavorite = false, pathname }: FilterTemplateProp
 			alert('Debe proporcionar al menos un filtro (género o autor)');
 			return;
 		}
-		filterBooks(queryPage ?? 0, filter);
+		filterBooks(queryPage ?? 0, filter);//fetch
+		if (filterPage === 0) {
+			router.push(
+				{
+					pathname,
+					query: { page: 0 },
+				},
+				undefined,
+				{ shallow: true }
+			);
+		}
 	};
 
 	return (

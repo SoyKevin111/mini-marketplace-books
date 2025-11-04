@@ -38,7 +38,7 @@ const Pagination = ({ total, page, pathname }: Props) => {
             ${page === i ? 'bg-blue-600 text-white' : 'bg-gray-200 hover:bg-gray-300'}
           `}
 					>
-						{i + 1}
+						{i}
 					</button>
 				);
 			})}
