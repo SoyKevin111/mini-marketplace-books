@@ -68,27 +68,28 @@ public class BookService {
 
    public List<String> findAllAuthors() {
       try {
-         return this.bookRepository.findAllAuthors();
+         return this.bookRepository.findAllAuthors().stream()
+            .distinct()
+            .toList();
       } catch (Exception e) {
          throw new RuntimeException("Error al buscar los autores", e);
       }
    }
 
-   public Page<Book> findFilterBooks(String genre, String author, int page, int size) {
+   public Page<Book> findFilterBooks(String genre, String author, boolean favorites, int page, int size) {
       PageRequest pageable = PageRequest.of(page, size);
-      Page<Book> result;
 
-      if (genre != null && author != null && !author.isBlank() && !genre.isBlank()) {
-         result = this.bookRepository.findByGenreAndAuthorIgnoreCase(Genre.fromDisplayName(genre), author, pageable);
-      } else if (genre != null && !genre.isBlank()) {
-         result = this.bookRepository.findByGenre(Genre.fromDisplayName(genre), pageable);
-      } else if (author != null && !author.isBlank()) {
-         result = this.bookRepository.findByAuthorIgnoreCase(author, pageable);
-      } else {
-         throw new RuntimeException("No se proporciono ningun filtro");
+      Genre genreEnum = (genre != null && !genre.isBlank()) ? Genre.fromDisplayName(genre) : null;
+      String authorParam = (author != null && !author.isBlank()) ? author : null;
+
+      if (genreEnum == null && authorParam == null) {
+         throw new RuntimeException("Debe proporcionar al menos un filtro (género o autor)");
       }
-      return result;
-
+      if (favorites) {
+         return bookRepository.findFavoritesByGenreOrAuthor(genreEnum, authorParam, pageable);
+      }
+      return bookRepository.findByGenreOrAuthor(genreEnum, authorParam, pageable);
    }
+
 
 }

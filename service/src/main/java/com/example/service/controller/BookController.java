@@ -74,9 +74,10 @@ public class BookController {
       @RequestParam(required = false, defaultValue = "") String genre,
       @RequestParam(required = false, defaultValue = "") String author,
       @RequestParam(defaultValue = "1") int page,
-      @RequestParam(defaultValue = "3") int size) {
-      System.out.println("genre: "+genre + " - author: " + author);
-      return this.bookService.findFilterBooks(genre, author, page, size)
+      @RequestParam(defaultValue = "3") int size,
+      @RequestParam(defaultValue = "false") boolean favorites) {
+      System.out.println("genre: " + genre + " - author: " + author);
+      return this.bookService.findFilterBooks(genre, author, favorites, page, size)
          .map(book ->
             new BookResponse(
                book.getId(),
